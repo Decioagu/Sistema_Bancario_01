@@ -1,4 +1,4 @@
-# Variaveis globais
+# variáveis globais
 deposito = 0
 saque = 0
 extrato = []
@@ -28,7 +28,7 @@ while loop:
     # exibir menu de opções
     print(menu)
 
-    # entrada de parametro do usuário
+    # entrada de parâmetro do usuário
     opcao = input('Escolha uma opção:').lower()
     print('=' * 60)
 
@@ -36,10 +36,10 @@ while loop:
     if opcao == 'd':
         try:
             print()
-            # entrada de parametro do usuário
+            # entrada de parâmetro do usuário
             deposito = float(input('Digite o valor de deposito: '))
 
-            # tomada de desisão (regrade negócio)
+            # tomada de decisão (regra de negócio)
             if deposito <= 0:
                 print('Deposito NÃO realizado, deposito menor ou igual a R$:0.00.')
             else:
@@ -48,7 +48,7 @@ while loop:
                 extrato.append(texto)
                 print('Deposito realizado com sucesso!!!')
 
-        # mesagem de erro para valores não validos
+        # mensagem de erro para valores não validos
         except Exception as erro:
             print(f'\nErro de operação => ({erro})')
             print('Verifique o valor digitado!!!')
@@ -57,12 +57,12 @@ while loop:
     elif opcao == 's':
         try:
             print()
-            # entrada de parametro do usuário
+            # entrada de parâmetro do usuário
             saque = float(input('Digite o valor de saque: '))
 
-            # tomada de desisão (regrade negócio)
+            # tomada de decisão (regra de negócio)
             if limite_de_saque_diario >= 3:
-                print('Saque NÃO realizar, já foi atigindo limite diario de (3 saques diário).\n')
+                print('Saque NÃO realizar, já foi atingido limite diário de (3 saques diário).\n')
             elif saque > LIMITE_DE_SAQUE:
                 print('Saque NÃO realizar seu limite para saque é de R$:500,00.\n')
             elif saque > saldo:
@@ -76,7 +76,7 @@ while loop:
                 extrato.append(texto)
                 print('Saque realizado com sucesso!!!')
 
-        # mesagem de erro para valores não validos
+        # mensagem de erro para valores não validos
         except Exception as erro:
             print(f'\nErro de operação => ({erro})')
             print('Verifique o valor digitado!!!')
@@ -84,7 +84,7 @@ while loop:
     # Menu de opções = EXTRATO
     elif opcao == 'e':
         print()
-        print(' Exetrato bancario '.center(25, '#'))
+        print(' Extrato bancário '.center(25, '#'))
         print('-' * 25)
         if extrato == []:
             print('Saldo total R$:0.00')
@@ -98,7 +98,7 @@ while loop:
     elif opcao == 'f':
         # opções para encerra loop e finalizar programa
         while True:
-            # entrada de parametro do usuário
+            # entrada de parâmetro do usuário
             loop = input('\nDeseja finalizar Sim = [s] ou Não = [n]:').lower()
 
             # resposta para usuário
@@ -111,7 +111,7 @@ while loop:
             else:
                 # mensagem de erro caso  a resposta não seja Sim [s] ou Não [n]
                 loop = True
-                print('\nOpeção invalida!!! \nDigite [s] para FINALIZAR ou [n] RETORNAR')
+                print('\nOpção invalida!!! \nDigite [s] para FINALIZAR ou [n] RETORNAR')
     else:
         # caso usuário digite qualquer opção não existente no "Menu de opções" 
          print('\nOpção invalida, digite a letra correspondente ao menu de opções:')
